@@ -1,0 +1,4 @@
+#Tue May 09 11:11:10 GMT+08:00 2017
+eclipse.preferences.version=1
+validator.Checked=WebRoot/js/jquery.min.js,WebRoot/js/bootstrapValidator.js,WebRoot/js/jquery.dataTables.js
+validator.Unchecked=
