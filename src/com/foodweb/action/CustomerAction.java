@@ -107,11 +107,6 @@ public class CustomerAction extends ActionSupport implements SessionAware{
 			return "input";
 			
 		} 
-		else {
-			 Customer db_customer0 = listCustomer.get(0);
-			 if(db_customer0.getName().equals("admin")&&db_customer0.getPassword().equals(customer.getPassword())){
-				 return "show_indexview"; 
-			 }
 		
 		else {
 			
@@ -122,7 +117,24 @@ public class CustomerAction extends ActionSupport implements SessionAware{
 			System.out.print(this.errMessage);
 			return "input";
 			
-		    }else{
+		    }
+			else {
+				 Customer db_customer0 = listCustomer.get(0);
+				 if(db_customer0.getName().equals("admin")&&db_customer0.getPassword().equals(customer.getPassword())){
+					// return "show_indexview"; 
+					 HttpServletRequest request = ServletActionContext.getRequest();  
+			            //将对象装入session  
+			            request.getSession().setAttribute("User",customer.getName()); 
+			            Object name= request.getSession().getAttribute("User");
+			            System.out.println(name);
+					
+					session.put("customer", db_customer);
+					prePage = "/food/food_showFood";
+					System.out.println("将要跳到："+ prePage );
+					session.remove("prePage");  
+					return "success";   
+				 }
+			else{
 		    	
 		    	//获取当前request对象  
 	            HttpServletRequest request = ServletActionContext.getRequest();  
