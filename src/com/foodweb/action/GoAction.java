@@ -98,7 +98,7 @@ public class GoAction extends ActionSupport{
 				go.setFoodname(goMsg[i][2]);
 				go.setGoTime(timeSet);
 				goDao.addGo(go);
-				System.out.println("名称："+goMsg[i][1]);
+				System.out.println("名称："+goMsg[i][2]);
 			}	
 		}
 		return "succ";

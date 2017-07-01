@@ -8,10 +8,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <base href="<%=basePath%>">
     
-    <title>购物车</title>
+<title>购物车</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -19,10 +19,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/main.css">
-	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/login.css">
-   </head>
+  <link rel="stylesheet" type="text/css" href="<%=basePath%>css/login.css">
+    <style type="text/css">
+    </style>
+</head>
   
-  <body onload="cha()">
+<body onload="cha()">
      <main class="container-fluid">
         
 	    <s:form action="go/go_addGoSucc" method="post">
@@ -35,7 +37,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	          <td>份数</td>
 	           <td>名称</td>
 	          <td>序号</td>  
-	          <!--<th>订单号</th>-->   
 	          <td>单价</td> 
 	        </tr> 
 	        </thead>
@@ -54,11 +55,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	            <td><s:property value="food.unitprice"></s:property></td>
 	          </tr>
 	         </s:iterator>
-	         <th></th>
-	         <th></th>
-	         <th></th>
-	         <th></th>
-	         <th><s:submit value="确定" style="color:red"/></th>
+	        
+	         <s:submit value="确定" style="color:red" />
+	         
 	      </table>
 	    </s:form>
 	
@@ -97,6 +96,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 		}
 	</script>
-	
-  </body>
+</body>
 </html>
